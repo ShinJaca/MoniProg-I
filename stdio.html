@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Manual de Referencia em C</title>
+</head>
+<body>
+    <div class="body">
+        <!-- header -->
+        <div class="header">
+            <h1>Manual de Referência em C</h1>
+            <h4>Referência de funções básicas de C, para iniciantes.</h4>
+        </div>
+
+
+        <!-- main -->
+        <div class="main">
+            <!-- sidemenu -->
+            <div class="sidemenu font_light">
+                <a href="index.html" class="menu_item">Sintaxe</a>
+                <a href="#top" class="menu_item menu_item_active" >stdio.h</p>
+                <a href="stdlib.html" class="menu_item">stdlib.h</a>
+                <a href="string.html" class="menu_item">string.h</a>
+                <a href="dirent.h" class="menu_item">dirent.h</a>
+            </div>
+            <!-- content -->
+            <div class="content">
+                <!-- cabeçalho e prototipos -->
+                <span class="file">
+                    <a name="top"></a> <h1>stdio.h</h1>
+                    <h4>Bibioteca de funções de entrada e saída.</h4>
+                </span>
+                <!--
+                <span class="proto font_code">
+                <a href="#***NAME***">
+                    <i class="return">***RETURN*** </i>
+                            <b class="func_name">***NAME***</b>( 
+                                <i class="type">***PARAM TYPE</i> 
+                                <i class="pointer" >***POINTER***</i>
+                                <b class="param">***PARAM***</b>, ...);
+                        </a>
+                        <p class="font_light">
+                            ***BREIF DESC***
+                        </p>
+                </span>
+                -->
+                <span class="proto font_code">
+                    <a href="#printf">
+                        <i class="return">int </i>
+                        <b class="func_name">printf</b>( 
+                            <i class="type">const char </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">format</b>, ...);
+                    </a>
+                    <p class="font_light">
+                        Imprime dados no console com máscara de formatação.
+                    </p>
+                </span>
+                <span class="proto font_code">
+                    <a href="#fgets">
+                    <i class="return">char </i>
+                    <i class="pointer" >* </i>
+                    <b class="func_name">fgets</b>( 
+                            <i class="type">char </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">str</b>,
+                            <i class="type">int</i> 
+                            <b class="param">n</b>,
+                            <i class="type">FILE </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">stream</b>);
+                    </a>
+                    <p class="font_light">
+                        Captura caracteres da entrada de console.
+                    </p>
+                </span>
+                <span class="proto font_code">
+                        <a href="#scanf">
+                            <i class="return">int </i>
+                            <b class="func_name">scanf</b>( 
+                                <i class="type">const char </i> 
+                                <i class="pointer" >* </i>
+                                <b class="param">format</b>, ...);
+                        </a>
+                        <p class="font_light">
+                            Função para escanear conteúdo da linha de comando.
+                        </p>
+                </span>
+                <!-- cards de descrição detalhada -->
+                <!--
+                <a name="***NAME***">
+                    <h2>***NAME***</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        ***RETURN*** <i class="type">***NAME***</i>(***PARAMS***);<br>
+                        <br>
+                        param: ***TYPE*** <i class="type">***PARAM***</i> - ***BRIEF DESC***<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        ***COMPLETE DESCRIPTION <br>
+                    </div>
+                </div>
+                -->
+                <!-- cards de descrição detalhada -->
+                <a name="printf">
+                    <h2>printf</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        int <i class="type">printf</i>(const char * format, ...);<br>
+                        <br>
+                        param: const char * <i class="type">format</i> - string de formatação de saída;<br>
+                        param: <i class="type">... </i> - variáveis opcionais que serão convertidas para uma saída;<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Imprime dados no console com máscara de formatação. <br>
+                        Usa uma máscara de formatação na forma de uma string que contém os dados e texto
+                        acessórios à SAÍDA. <br>
+                        A máscara não só monta a saída mas define onde e que tipo de dados serão convertidos e concatenados nessa saída.
+                        Os dados a serem convertidos são os parametros seguintes à sequencia de formatação, seguindo a ordem que aparecem na formatação.<br>
+                    </div>
+                </div>
+                <a name="fgets">
+                    <h2>fgets</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        char * <i class="type">fgets</i>(char * str, int n, FILE * stream);<br>
+                        <br>
+                        param: char * <i class="type">str</i> - ponteiro para a chadeia de caracteres a receber os dados;<br>
+                        param: int <i class="type">n</i> - numero máximo de caracteres a serem capturados;<br>
+                        param: FILE *  <i class="type">stream</i> - ponteiro para o arquivo/stream de entrada, usualmente <i class="type">stdin</i> <br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Lê uma linha de um arquivo especificdo e armazena no local especificado por <i class="type">str</i>. <br>
+                        Captura uma quantidade definida de caracteres de um arquivo ou de uma corrente de entrada,
+                        como a entrada padrão do conseole "stdin". <br>
+                        fgets() usa o valor definido por "n" para limitar a quantidade de caracteres capturados do
+                        arquivo ou um caractere de final de linha, diferentemende de <a href="#scanf" class="type">scanf()</a>,
+                        que para a captura em um caractere de espaço branco (espaços, tabulações, etc.). <br>
+                    </div>
+                </div>
+    
+                <!-- cards de descrição detalhada -->
+                <a name="scanf">
+                    <h2>scanf</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        int <i class="type">scanf</i>(const char * format, ...);<br>
+                        <br>
+                        param: const char * <i class="type">format</i> - string de formatação de entrada;<br>
+                        param: <i class="type">... </i> - variáveis para onde os dados convertios serão enviados;<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Captura entradas formatadas no console. <br>
+                        Usa uma máscara de formatação na forma de uma string que contém os dados e texto
+                        acessórios à ENTRADA, em oposição à formatação de <a class="type" href="#printf">printf()</a>. <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer font_light">
+            <img src="img/brasao.jpeg" style="width: 32px; height: auto;">
+            <p>UEFS   |   DEXA  |   Monitoria de Programação e Algoritmos</p>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
