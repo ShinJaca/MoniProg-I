@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Manual de Referencia em C</title>
+</head>
+<body>
+    <div class="body">
+        <!-- header -->
+        <div class="header">
+            <h1>Manual de Referência em C</h1>
+            <h4>Referência de funções básicas de C, para iniciantes.</h4>
+        </div>
+
+
+        <!-- main -->
+        <div class="main">
+            <!-- sidemenu -->
+            <div class="sidemenu font_light">
+                    <!-- item de menu ativo
+                    
+                    <a href="#top" class="menu_item menu_item_active" >
+                        <p>stdio.h</p>
+                    </a>
+                    -->
+                    <a href="index.html" class="menu_item">Sintaxe</a>
+                    <a href="stdio.html" class="menu_item" >stdio.h</p>
+                    <a href="stdlib.html" class="menu_item">stdlib.h</a>
+                    <a href="#top" class="menu_item menu_item_active" >
+                        <p>string.h</p>
+                    </a>
+                    <a href="dirent.html" class="menu_item">dirent.h</a>
+                    <a href="locale.html" class="menu_item">locale.h</a>
+            </div>
+            <!-- content -->
+            <div class="content">
+                <!-- cabeçalho e prototipos -->
+                <span class="file">
+                    <a name="top"></a> <h1>string.h</h1>
+                    <h4>Biblioteca contendo funções para manipulação de cadeias de caracteres.</h4>
+                </span>
+                <!--
+                <span class="proto font_code">
+                <a href="#***NAME***">
+                    <i class="return">***RETURN*** </i>
+                            <b class="func_name">***NAME***</b>( 
+                                <i class="type">***PARAM TYPE</i> 
+                                <i class="pointer" >***POINTER***</i>
+                                <b class="param">***PARAM***</b>, ...);
+                        </a>
+                        <p class="font_light">
+                            ***BREIF DESC***
+                        </p>
+                </span>-->
+               <span class="proto font_code">
+                    <a href="#funcdef">
+                        <i class="return">retorno </i>
+                        <b class="func_name">nome_da_funcao</b>( [
+                            <i class="type">tipo_parametro_1</i> 
+                            <b class="param">nome_do_parametro_1</b>],[
+                            <i class="type">tipo_parametro_n</i> 
+                            <b class="param">nome_do_parametro_n</b>],
+                             (...) );
+                    </a>
+                    <p class="font_light">
+                        Protótipo básico de uma função em C
+                    </p>
+                </span>
+
+                
+                <!-- cards de descrição detalhada -->
+                <!--
+                <a name="***NAME***">
+                    <h2>***NAME***</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        ***RETURN*** <i class="type">***NAME***</i>(***PARAMS***);<br>
+                        <br>
+                        param: ***TYPE*** <i class="type">***PARAM***</i> - ***BRIEF DESC***<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        ***COMPLETE DESCRIPTION <br>
+                    </div>
+                </div>
+                -->
+                <!-- cards de descrição detalhada -->
+                <a name="funcdef">
+                        <h2>Função</h2>
+                    </a>
+                    <div class="card">
+                        <div class="section font_code">
+                            retorno <i class="type">nome_da_funcao</i>([tipo_parametro_n nome_do_parametro_n], (...));<br>
+                            <br>
+                            param: tipo_parametro_n <i class="type">nome_do_parametro_n</i> - definição de parametro, quando for cabível;<br>
+                            param: <i class="type">(...) </i> - diversos parametros podem ser declarados para uma função, assim como nenhum;<br>
+                            <br>
+                        </div>
+                        <div class="section font_common">
+                            As funções em C, por conceito são estruturas de código que executam alguma tarefa e retornam algo para o local onde foram infovadas,
+                            por exemplo, ao chamar a função em uma associação de valores <i class="font_code">a = acos(PI);</i>, o computador realizará a algebra 
+                            para calcular o valor do arco-cosseno de PI e retorna esse valor para a variável, associando o resultado da função <i class="font_code">acos(PI)</i>
+                            para a variável <i class="font_code">a</i>.
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer font_light">
+            <img src="img/brasao.jpeg" style="width: 32px; height: auto;">
+            <p>UEFS   |   DEXA  |   Monitoria de Programação e Algoritmos</p>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
