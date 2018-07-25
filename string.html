@@ -56,17 +56,36 @@
                         </p>
                 </span>-->
                <span class="proto font_code">
-                    <a href="#funcdef">
-                        <i class="return">retorno </i>
-                        <b class="func_name">nome_da_funcao</b>( [
-                            <i class="type">tipo_parametro_1</i> 
-                            <b class="param">nome_do_parametro_1</b>],[
-                            <i class="type">tipo_parametro_n</i> 
-                            <b class="param">nome_do_parametro_n</b>],
-                             (...) );
+                    <a href="#strcat">
+                        <i class="return">char </i>
+                        <i class="pointer" >* </i>
+                        <b class="func_name">strcat</b>(
+                            <i class="type">char </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">dest</b>,
+                            <i class="type">const char </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">src</b>);
                     </a>
                     <p class="font_light">
-                        Protótipo básico de uma função em C
+                        Concatena dois vetores do tipo char.
+                    </p>
+                </span>
+
+                <span class="proto font_code">
+                    <a href="#strcpy">
+                        <i class="return">char </i>
+                        <i class="pointer" >* </i>
+                        <b class="func_name">strcpy</b>(
+                            <i class="type">char </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">dest</b>,
+                            <i class="type">const char </i> 
+                            <i class="pointer" >* </i>
+                            <b class="param">src</b>);
+                    </a>
+                    <p class="font_light">
+                        Copia um determinado vetor do tipo char em outro.
                     </p>
                 </span>
 
@@ -90,23 +109,39 @@
                 -->
                 <!-- cards de descrição detalhada -->
                 <a name="funcdef">
-                        <h2>Função</h2>
-                    </a>
-                    <div class="card">
-                        <div class="section font_code">
-                            retorno <i class="type">nome_da_funcao</i>([tipo_parametro_n nome_do_parametro_n], (...));<br>
-                            <br>
-                            param: tipo_parametro_n <i class="type">nome_do_parametro_n</i> - definição de parametro, quando for cabível;<br>
-                            param: <i class="type">(...) </i> - diversos parametros podem ser declarados para uma função, assim como nenhum;<br>
-                            <br>
-                        </div>
-                        <div class="section font_common">
-                            As funções em C, por conceito são estruturas de código que executam alguma tarefa e retornam algo para o local onde foram infovadas,
-                            por exemplo, ao chamar a função em uma associação de valores <i class="font_code">a = acos(PI);</i>, o computador realizará a algebra 
-                            para calcular o valor do arco-cosseno de PI e retorna esse valor para a variável, associando o resultado da função <i class="font_code">acos(PI)</i>
-                            para a variável <i class="font_code">a</i>.
-                        </div>
+                    <h2>strcat</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        char *<i class="type">strcat</i>(char *dest , const char *src);<br>
+                        <br>
+                        param: char * <i class="type">dest</i> - Ponteiro para a cadeia de bytes terminada em nulo para ser acrescentada;<br>
+                        param: const char *<i class="type">src</i> - Ponteiro para a cadeia de bytes terminada em nulo para copiar;<br>
+                        <br>
                     </div>
+                    <div class="section font_common">
+                        Anexa uma cópia de cadeia de bytes(ponteiro que aponta para uma string src)  para o final de uma cadeia de bytes(ponteiro que aponta para uma string dest) para o destino.<br>
+                        Ou seja , o carácter que esta no src[0] substituir o terminador null no final dest.A cadeia de bytes resultantes termina em null.<br>
+                    </div>
+                </div>
+
+                <a name="funcdef">
+                    <h2>strcpy</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        char *<i class="type">strcpy</i>(char *dest , const char *src);<br>
+                        <br>
+                        param: char * <i class="type">dest</i> - Ponteiro para a cadeia de bytes terminada em nulo para ser escrita;<br>
+                        param: const char *<i class="type">src</i> - Ponteiro para a cadeia de bytes terminada em nulo para copiar;<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Sobrescreve uma cópia de cadeia de bytes(ponteiro que aponta para uma string src) em uma cadeia de bytes (ponteiro que aponta para uma string dest).<br>
+                        Ou seja, o vetor dest agora vai ser igual ao src.<br>
+                    </div>
+                </div>
+
             </div>
         </div>
 
