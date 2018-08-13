@@ -263,7 +263,7 @@
                         <br>
                     </div>
                     <div class="section font_common">
-                        Lê <i class="type font_code">nmemb</i> elementos de <i class="type font_code">size</i> bytes de um arquivo <i class="font_code">stream</i> para
+                        Lê <i class="font_code">nmemb</i> elementos de <i class="font_code">size</i> bytes de um arquivo <i class="font_code">stream</i> para
                         para um array apontardo por <i class="font_code">ptr</i>.<br>
                         Fread é uma função que permite lê dados armazenados em um arquivo de forma mais poderosa, uma vez que lê os bytes do arquivo que podem
                         remontar estruturas inteiras sem necessidade de parsing ou quaisquer recontruções de dados.<br>
@@ -272,6 +272,28 @@
                         , a função retorna fim de arquivo ou o numero de conversões com sucesso até o ponto do erro, que pode ser zero.<br>
                     </div>
                 </div>
+                <a name="fread">
+                    <h2>fread</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        size_t <i class="type">fread</i>(const void * ptr, size_t size, size_t nmemb, FILE * stream);<br>
+                        <br>
+                        param: const void * <i class="type">ptr</i> - Array de elementos a serem escritos no arquivo<br>
+                        param: size_t <i class="type">size</i> - Tamanho em bytes do elemento.<br>
+                        param: size_t <i class="type">nmemb</i> - Quantidade de elementos a serem escritos no arquivo.<br>
+                        param: FILE * <i class="type">stream</i> - Fluxo de dados ou arquivo onde os dados serão escritos.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Escreve dados do array apontado por <i class="font_code">ptr</i> a um arquivo definido por <i class="font_code">stream</i>. Escreve <i class="font_code">nmemb</i>
+                        elementos de tamanho <i class="font">size</i> bytes.<br>
+                        Caso a escrita seja bem sucedida, retorna o numero de elementos escritos.
+                        Caso algum erro ocorra, retorna o numero de elementos escritos até o erro, que pode ser zero. <br>
+                    </div>
+                </div>
+
+
             </div>
         </div>
 
