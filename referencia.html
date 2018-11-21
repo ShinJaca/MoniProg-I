@@ -109,53 +109,30 @@
                         <br>
                     </div>
                     <div class="section font_common">
-                        As funções em C, por conceito são estruturas de código que executam alguma tarefa e retornam algo para o local onde foram infovadas,
+                        As funções em C, por conceito são estruturas de código que executam alguma tarefa e retornam algo para o local onde foram invocadas,
                         por exemplo, ao chamar a função em uma associação de valores <i class="font_code">a = acos(PI);</i>, o computador realizará a algebra 
                         para calcular o valor do arco-cosseno de PI e retorna esse valor para a variável, associando o resultado da função <i class="font_code">acos(PI)</i>
                         para a variável <i class="font_code">a</i>.
                     </div>
                 </div>
-                <a name="fgets">
-                    <h2>fgets</h2>
+
+                <a name="procedef">
+                    <h2>Procedimento</h2>
                 </a>
                 <div class="card">
                     <div class="section font_code">
-                        char * <i class="type">fgets</i>(char * str, int n, FILE * stream);<br>
+                        void <i class="type">nome_do_procedimento</i>([tipo_parametro_n nome_do_parametro_n], (...));<br>
                         <br>
-                        param: char * <i class="type">str</i> - ponteiro para a chadeia de caracteres a receber os dados;<br>
-                        param: int <i class="type">n</i> - numero máximo de caracteres a serem capturados;<br>
-                        param: FILE *  <i class="type">stream</i> - ponteiro para o arquivo/stream de entrada, usualmente <i class="type">stdin</i> <br>
-                        <br>
-                    </div>
-                    <div class="section font_common">
-                        Lê uma linha de um arquivo especificdo e armazena no local especificado por <i class="type">str</i>. <br>
-                        Captura uma quantidade definida de caracteres de um arquivo ou de uma corrente de entrada,
-                        como a entrada padrão do conseole "stdin". <br>
-                        fgets() usa o valor definido por "n" para limitar a quantidade de caracteres capturados do
-                        arquivo ou um caractere de final de linha, diferentemende de <a href="#scanf" class="type">scanf()</a>,
-                        que para a captura em um caractere de espaço branco (espaços, tabulações, etc.). <br>
-                    </div>
-                </div>
-    
-                <!-- cards de descrição detalhada -->
-                <a name="scanf">
-                    <h2>scanf</h2>
-                </a>
-                <div class="card">
-                    <div class="section font_code">
-                        int <i class="type">scanf</i>(const char * format, ...);<br>
-                        <br>
-                        param: const char * <i class="type">format</i> - string de formatação de entrada;<br>
-                        param: <i class="type">... </i> - variáveis para onde os dados convertios serão enviados;<br>
+                        param: tipo_parametro_n <i class="type">nome_do_parametro_n</i> - definição de parametro, quando for cabível;<br>
+                        param: <i class="type">(...) </i> - diversos parametros podem ser declarados para uma função, assim como nenhum;<br>
                         <br>
                     </div>
                     <div class="section font_common">
-                        Captura entradas formatadas no console. <br>
-                        Usa uma máscara de formatação na forma de uma string que contém os dados e texto
-                        acessórios à ENTRADA, em oposição à formatação de <a class="type" href="#printf">printf()</a>. <br>
+                        Os procedimentos em C, assim como as funções, por conceito são estruturas de código que executam alguma tarefa mas, diferente de uma função
+                        não retorna valor algum, o que não significa que através de parametros não se possa modificar valores fora em outro escopo do programa.
                     </div>
                 </div>
-            </div>
+                
         </div>
 
 

@@ -72,6 +72,7 @@ h4{
     left: 0px;
     border-bottom: solid 1px royalblue;
     display: flex;
+    flex-flow: wrap;
 }
 .proto{
     margin-left: 20px;
@@ -113,4 +114,12 @@ a{
 }
 p{
     margin-top: 2px;
+}
+@media(max-width: 500px){
+    h1{
+        font-size:25px;
+    }
+    h4{
+        font-size: 20px;
+    }
 }

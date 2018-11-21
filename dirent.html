@@ -55,7 +55,72 @@
                             ***BREIF DESC***
                         </p>
                 </span>-->
-                
+                <span class="proto font_code">
+                <a href="#opendir">
+                    <i class="return">DIR * </i>
+                            <b class="func_name">opendir</b>( 
+                                <i class="type">const char</i> 
+                                <i class="pointer" > * </i>
+                                <b class="param">dirname</b> );
+                        </a>
+                        <p class="font_light">
+                            Abre e retorna um ponteiro para um fluxo de diretório.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#readdir">
+                    <i class="return">struct dirent * </i>
+                            <b class="func_name">readdir</b>( 
+                                <i class="type">DIR</i> 
+                                <i class="pointer" > * </i>
+                                <b class="param">dir_p</b> );
+                        </a>
+                        <p class="font_light">
+                            Retorna um ponteira para uma estrutura representando o diretório selecionado no parametro.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#closedir">
+                    <i class="return">int </i>
+                            <b class="func_name">closedir</b>( 
+                                <i class="type">DIR</i> 
+                                <i class="pointer" > * </i>
+                                <b class="param">dir_p</b> );
+                        </a>
+                        <p class="font_light">
+                            Fecha um fluxo de diretório.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#rewinddir">
+                    <i class="return">void </i>
+                            <b class="func_name">rewinddir</b>( 
+                                <i class="type">DIR</i> 
+                                <i class="pointer" > * </i>
+                                <b class="param">dir_p</b> );
+                        </a>
+                        <p class="font_light">
+                            Retorna a referência de posição de dir_p para o inicio do diretório.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#scandir">
+                    <i class="return">DIR * </i>
+                            <b class="func_name">scandir</b>( 
+                                <i class="type">const char</i> 
+                                <i class="pointer" >*</i>
+                                <b class="param">dir_p</b>,
+                                <i class="type">int</i> 
+                                <b class="param">(*filter)</b>
+                                <i class="pointer" >(const struc dirent * )</i>,
+                                <i class="type">int</i> 
+                                <b class="param">(*compar)</b>
+                                <i class="pointer" >*(const struct dirent **, const struct dirent **)</i> );
+                            </a>
+                        <p class="font_light">
+                            Varre um diretório, filtra e ordena seu conteúdo.
+                        </p>
+                </span>
                 <!-- cards de descrição detalhada -->
                 <!--
                 <a name="***NAME***">
@@ -74,7 +139,91 @@
                 </div>
                 -->
                 <!-- cards de descrição detalhada -->
-              
+                <a name="opendir">
+                    <h2>opendir</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        DIR * <i class="type">opendir</i>( const char * dirname );<br>
+                        <br>
+                        param: const char * <i class="type">dirname</i> - Caminho do diretório a ser aberto.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        A função <i class="font_code">opendir()</i> abre um fluxo de diretório especificado em <i class="font_code">dirname</i>.
+                        O fluxo de diretório é retornado na primeira entrada de diretório contida no fluxo. Quando bem sucedida, a função retorna
+                        um ponteiro para o fluxo que poderá ser usado nas funções de leitura(<i class="font_code">readdir()</i>), fechamento(<i class="font_code">closedir()</i>)
+                         e reinício de fluxo(<i class="font_code">rewinddir()</i>).<br>
+                    </div>
+                </div>
+                <a name="readdir">
+                    <h2>readdir</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        struct dirent * <i class="type">readdir</i>( DIR * dir_p );<br>
+                        <br>
+                        param: DIR * <i class="type">dir_p</i> - Ponteiro para um fluxo de diretório a ser lido.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        A função retorna um ponteiro para uma estrutura reprensenando a entrada de fluxo na posição atual do fluxo especificado
+                        em <i class="font_code">dir_p</i> e move a posição do fluxo para a próxima entrada contida nele. Ao chegar ao fim do
+                        fluxo, a função retornará <i class="font_code">null</i>.
+                        Caso alguma referencia do fluxo tenha sido modificada pela chamada assíncrona de outras funções de manipulação de fluxo,
+                        o retorno de uma nova chamada de <i class="font_code">readdir()</i> será inespecífico. <br>
+                    </div>
+                </div>
+                <a name="closedir">
+                    <h2>closedir</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        int <i class="type">closedir</i>( DIR * dir_p );<br>
+                        <br>
+                        param: DIR * <i class="type">dir_p</i> - Ponteiro para um fluxo de diretório a ser fechado.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Fecha um fluxo de diretório. Após seu uso, o ponteiro especificado em <i class="font_code">dir_p</i> não apontará mais para um
+                        local válido. <br>
+                    </div>
+                </div>
+                <a name="rewinddir">
+                    <h2>rewinddir</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        void <i class="type">rewinddir</i>( DIR * dir_p );<br>
+                        <br>
+                        param: DIR * <i class="type">dir_p</i> - Ponteiro para um fluxo de diretório a ser reiniciado.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Retorna a referência de entrada do fluxo para a primeira entrada, reiniciando o fluxo de diretório. <br>
+                    </div>
+                </div>
+                <a name="scandir">
+                    <h2>scandir</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        int <i class="type">scandir</i>( const char *dir_p, int(*filter)(const struct dirent *), 
+                        int(*compar)(const struct dirent **, const struct dirent **) );<br>
+                        <br>
+                        param: const char * <i class="type">dir_p</i> - Caminho do diretório a ser varrido.<br>
+                        param: int <i class="type">(*filter)</i> - Ponteiro para função de filtragem de itens do diretório.<br>
+                        param: int <i class="type">(*compar)</i> - Ponteiro para função de comparação e ordenação de itens do diretório.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        A função <i class="font_code">scandir()</i> varre o diretório especificado pelo caminho <i class="font_code">dir_p</i>
+                        e adiciona em <i class="font_code">namelist()</i> as entradas onde a função especificada em <i class="font_code">filter()</i>
+                        retornar valores diferentes de zero, que então são ordenadas, usualmente via qsort, pela função especificada em <i class="font_code">compar()</i>.
+                        Esta função é bastante conveniente para problemas de listagem e/ou seleção de entradas nos diretórios. <br>
+                    </div>
+                </div>
+
             </div>
         </div>
 

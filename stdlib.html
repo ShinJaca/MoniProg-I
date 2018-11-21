@@ -55,8 +55,101 @@
                             ***BREIF DESC***
                         </p>
                 </span>-->
-             
-                
+                <span class="proto font_code">
+                <a href="#calloc">
+                    <i class="return">void </i><i class="pointer" >*</i>
+                            <b class="func_name">calloc</b>( 
+                                <i class="type">size_t</i> 
+                                <b class="param">nmemb</b>,
+                                <i class="type">size_t</i> 
+                                <b class="param">size</b>);
+                        </a>
+                        <p class="font_light">
+                            Aloca e limpa o bloco de memória.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#malloc">
+                    <i class="return">void </i><i class="pointer" >*</i>
+                            <b class="func_name">malloc</b>( 
+                                <i class="type">size_t</i> 
+                                <b class="param">size</b>);
+                        </a>
+                        <p class="font_light">
+                            Aloca o bloco de memória para um array mas não o limpa.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#free">
+                    <i class="return">void </i>
+                            <b class="func_name">free</b>( 
+                                <i class="type">void</i> 
+                                <i class="pointer" >*</i>
+                                <b class="param">ptr</b>);
+                        </a>
+                        <p class="font_light">
+                            Libera um bloco de memória.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#system">
+                    <i class="return">int </i>
+                            <b class="func_name">system</b>( 
+                                <i class="type">const char</i> 
+                                <i class="pointer" >*</i>
+                                <b class="param">str</b>);
+                        </a>
+                        <p class="font_light">
+                            Executa um comando so sistema operacional.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#exit">
+                    <i class="return">void </i>
+                            <b class="func_name">exit</b>( 
+                                <i class="type">int</i> 
+                                <b class="param">status</b>);
+                        </a>
+                        <p class="font_light">
+                            Sai do programa.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#atof">
+                    <i class="return">double </i>
+                            <b class="func_name">atof</b>( 
+                                <i class="type">const char</i> 
+                                <i class="pointer" >*</i>
+                                <b class="param">nptr</b>);
+                        </a>
+                        <p class="font_light">
+                            Converte uma String em um número de ponto flutuante.
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#atoi">
+                    <i class="return">int </i>
+                            <b class="func_name">atoi</b>( 
+                                <i class="type">const char</i> 
+                                <i class="pointer" >*</i>
+                                <b class="param">nptr</b>);
+                        </a>
+                        <p class="font_light">
+                            Converte uma String em um número inteiro (int).
+                        </p>
+                </span>
+                <span class="proto font_code">
+                <a href="#atol">
+                    <i class="return">long </i>
+                            <b class="func_name">atol</b>( 
+                                <i class="type">const char</i> 
+                                <i class="pointer" >*</i>
+                                <b class="param">nptr</b>);
+                        </a>
+                        <p class="font_light">
+                            Converte uma String em um número inteiro (long).
+                        </p>
+                </span>
                 <!-- cards de descrição detalhada -->
                 <!--
                 <a name="***NAME***">
@@ -75,7 +168,128 @@
                 </div>
                 -->
                 <!-- cards de descrição detalhada -->
-             
+
+                <a name="calloc">
+                    <h2>calloc</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        void *<i class="type">calloc </i>( size_t nmemb, size_t size );<br>
+                        <br>
+                        param: size_t <i class="type">nmemb</i> - numero de elementos do bloco<br>
+                        param: size_t <i class="type">size</i> - tamanho dos elementos em bytes<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Calloc aloca um espaço de memória para um array de nmemb elemento de size bytes e limpa esse espaço de memória, 
+                        não deixando valores deletérios que porventura estivessem naquele espaço.<br>
+                        Comumente, calloc é invocado com o numero total de elementos escolhido e um tamanho de outro tipo já definido, como 
+                        por exemplo <i class="font_code">calloc(5, sizeof(int))</i>, que reserva um espaço para um array de 5 inteiros. <br>
+                        Após a reserva, calloc retorna o endereço de memória desse novo espaço alocado.<br>
+                    </div>
+                </div>
+                <a name="malloc">
+                    <h2>malloc</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        void *<i class="type">malloc </i>( size_t size );<br>                        
+                        <br>
+                        param: size_t <i class="type">size</i> - tamanho dos elementos em bytes<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Malloc apenas aloca um espaço de memória de size bytes e retorna um endereço para esse espaço.<br>
+                        Diferentemente de <a href="#calloc"><i class="font_code">calloc</i></a>, não existe definição de numero de elementos, nem 
+                        limpeza do espaço recém alocado.<br>
+                    </div>
+                </div>
+                <a name="free">
+                    <h2>free</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        void *<i class="type">free </i>( void * ptr );<br>                        
+                        <br>
+                        param: void * <i class="type">ptr</i> - ponteiro para o espaço a ser liberado.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Libera um bloco de memória anteriormente alocado com <i class="font_code">malloc, calloc, ou realloc</i> <br>
+                    </div>
+                </div>
+                <a name="system">
+                    <h2>system</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        int <i class="type">system </i>( const char * str );<br>                        
+                        <br>
+                        param: const char * <i class="type">str</i> - comando do sistema operacional a ser executado<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Executa no momento da invocação um comando do sistema operacional, como por exemplo o comando de limpeza de 
+                        tela de terminal <i class="font_code">system("clear");</i> para linux ou <i class="font_code">system("cls")</i> 
+                        para DOS/Windows.<br>
+                    </div>
+                </div>
+                <a name="exit">
+                    <h2>exit</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        void <i class="type">exit </i>( size_t size );<br>                        
+                        <br>
+                        param: int <i class="type">status</i> - numero do estado de término do programa.<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Termina o programa no ponto da invocação e envia o condigo status para o sistema.<br>
+                    </div>
+                </div>
+                <a name="atof">
+                    <h2>atof</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        double <i class="type">atof </i>( const char * nptr );<br>                        
+                        <br>
+                        param: const char * <i class="type">nptr</i> - string a ser convertida para float<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Converte string <i class="font_code">nptr</i> em um número double e retorna para o programa.<br>
+                    </div>
+                </div>
+                <a name="atoi">
+                    <h2>atoi</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        int <i class="type">atoi </i>( const char * nptr );<br>                        
+                        <br>
+                        param: const char * <i class="type">nptr</i> - string a ser convertida para inteiro<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Converte string <i class="font_code">nptr</i> em um número inteiro do tamnho <i class="font_code">int</i> e retorna para o programa.<br>
+                    </div>
+                </div>
+                <a name="atol">
+                    <h2>atol</h2>
+                </a>
+                <div class="card">
+                    <div class="section font_code">
+                        long <i class="type">atol </i>( const char * nptr );<br>                        
+                        <br>
+                        param: const char * <i class="type">nptr</i> - string a ser convertida para inteiro<br>
+                        <br>
+                    </div>
+                    <div class="section font_common">
+                        Converte string <i class="font_code">nptr</i> em um número inteiro do tamnho <i class="font_code">long</i> e retorna para o programa.<br>
+                    </div>
+                </div>
             </div>
         </div>
 
